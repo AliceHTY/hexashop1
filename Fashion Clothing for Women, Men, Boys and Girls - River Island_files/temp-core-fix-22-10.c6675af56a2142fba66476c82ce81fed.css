@@ -1,0 +1,274 @@
+
+/*to be removed when PDP 3.2 goes live*/
+.returns-info__r8IQX a {
+    text-decoration: underline;
+}
+
+
+/* temp fix until https://riverisland.atlassian.net/browse/TMS-3080 */
+@media screen and (max-width: 769px) {
+    .ShopTheLook__container___jnPhi {
+        width: 100% !important;
+        grid-column: span 2 !important;
+        left: 0 !important;
+    }
+}
+
+
+
+.StickyFilterBar__sticky___scGhk[data-display-sticky-visual-filters-css='false'] div[class^='VisualFilter__visual-filter'] {
+    display: none;
+}
+
+/* fix for search box in my account */
+
+/* Temp fix as for making the text left aligned for the menu widgets */ 
+.mega-menu-sub-menu .mega-menu__column-item.widget .mega-menu__widget-container .mega-menu__widget-copy p {
+    text-align: left;
+}
+
+/* adding icons to returns flyout on PDP */
+.returns__flyout-icon {
+    display: inline-block;
+    vertical-align: middle;
+    width: 20px;
+}
+
+/* TEMP FIX for PDP-9039 SALE is not highlighted in red on Mobile. */
+.mega-menu__column .mega-menu__column-item.highlight a {
+    color: #ff586d;
+}
+
+/* TEMP FIX for PDP-8923: Adding padding to the bottom of the menu so it
+    displays correctly on mobile devices with the url bar at the bottom of the
+    screen. Once the Core code as been deployed this should be removed. 
+    expecting in WR158
+*/
+@media screen and (max-width: 769px) {
+    .mega-menu-sub-menu {
+        padding-bottom: 80px;
+    }
+}
+
+/* TEMP FIX for PDP-8925: Mobile menu items have missing or double border. 
+    Once WR158 has been deployed we should remove this rule.
+*/
+@media screen and (max-width: 769px) {
+    .mega-menu__item .mega-menu__sub-menu:first-of-type .mega-menu__column:first-of-type .mega-menu__multi-layer-level:first-of-type,
+    .mega-menu__multi-layer-sub-level.mega-menu__multi-layer-sub-level--active li:first-of-type  {
+        border-top: 1px solid #f0f0f0;
+        box-sizing: border-box;
+    }
+}
+
+@media only screen and (min-width: 769px) {
+    .header__search-container .search-dropdown {
+        box-sizing: unset;
+    }
+}
+
+
+.product_cross-sell__product-image-holder___2IeBd {
+    min-width: 1px;
+}
+.product_cross-sell__product-image-holder___2IeBd .lazyload-placeholder,
+.product_cross-sell__product-image-holder___2IeBd .lazyload-wrapper {
+    min-width: 1px;
+    min-height: 1px;
+}
+
+
+@media screen and (max-width: 769px) {
+    
+.region-DE .size-selector__text___ci9P8{    text-overflow: ellipsis;
+    width: 78px;
+    overflow: hidden;
+}
+}
+
+
+/* hide app button on mob megamenu only */
+.mega-menu-info .btn.ui-primary {
+	display:none;
+}
+
+/* temp removing contact us in faq section */
+
+.faq-content .faq-chat {
+    display:none;
+}
+
+.BlogContent__blog-content__image-container___2mta2 {
+    width: auto;
+    height: 100%;
+}
+
+.BlogContent__blog-content__image-container___2mta2 img {
+    width: 100%;
+    height: auto;
+}
+
+@media screen and (max-width: 700px) {
+    .BlogContent__blog-content__image-container___2mta2 {
+        width: 50%;
+        height: auto;
+    }
+}
+
+@media screen and (min-width: 769px) {
+    
+    .Image__content-image___2S3mR{
+        width: 100%;
+        height: auto;
+    }
+
+}
+
+/* Fixes for multi layer menu widget */
+.mega-menu-sub-menu .mega-menu__column-item.widget.pastel-blackcurrent {
+    background-color: #d5dcef;
+}
+
+
+/* iOS 15 Fixes */
+
+.header__button--burger-menu{
+    color: inherit;
+}
+
+.main-navigation__item{
+    color: inherit;
+}
+
+.icon-ui-photo-image, .icon-ui-search, .icon-ui-close{
+    color: inherit;
+}
+
+.search--mobile__submit.icon-ui-search {
+    color: white;
+}
+
+.matching-set_icon{
+    color: inherit;
+}
+
+
+/* Temp fix for faq-container */
+#faq-container {
+  padding: 0 !important;
+}
+
+body {
+  overflow-x: visible;
+}
+
+.no-breadcrumbs {
+  display: none;
+}
+
+@media (max-width: 700px) {
+  .ugc-gallery[data-style="lp"]
+    .ugc-gallery__container
+    .ugc-inner-gallery
+    .ugc-slide__image {
+    max-width: 90vw !important;
+  }
+}
+
+
+
+@media screen and (min-width: 861px) {
+  .ugc-overlay-video--main {
+    width: auto !important;
+    height: 100% !important;
+  }
+}
+
+/* fix for mobile info strip causing PLP problems */
+.mobile-info-strip {
+  overflow: hidden;
+}
+
+/*capitalise blog header until CMS is updated to allow editing of this page*/
+#inspiration .inspiration-content-wrap .blog-header h1 {
+  text-transform: uppercase;
+}
+
+@media only screen and (max-width: 700px) {
+  /*remove lists from LPs on mob*/
+  .shopping-catalogue-guide {
+    display: none;
+  }
+}
+
+/*cut margin before title on blog post*/
+@media only screen and (max-width: 43.75em) {
+  #inspiration.inspiration-post {
+    margin-top: 20px;
+  }
+}
+
+/* temp hiding of wishlist popup */
+#wishNotification {
+  display: none !important;
+}
+
+#inspiration
+  .inspiration-content-wrap
+  .blog-posts
+  .row
+  a.blog-post
+  picture
+  img {
+  max-width: 100%;
+}
+
+@media (max-width: 700px) {
+  #preview-toolbar {
+    transform: translate(0px, 100%);
+  }
+}
+
+#cookie-notifcation-banner {
+  z-index: 500;
+}
+
+/*7-1-16*/
+@media only screen and (max-width: 700px) {
+  .breadcrumbs {
+    display: none;
+  }
+}
+
+
+/* Temp fix for product capitalization */
+.bag-product-row__name {
+  height: 2.4rem;
+}
+
+.bag-product-row__name:after {
+  height: 1.3em !important;
+  width: 30%;
+}
+
+.product-details-container .product-panel .product-title__container .product-title {
+   height: auto !important;
+}
+
+.product-details-container .product-panel .product-title__container .product-title:after {
+    content: none !important;
+}
+
+/* Temp fix for newsletter mobile not wrapping properly */
+
+@media only screen and (min-width: 769px) {
+	.newsletter__form .checkbox-group .ui-checkbox-label {
+		margin-left: 8px;
+		margin-right: 8px;
+	}
+}
+
+.newsletter .checkbox-group div:nth-child(4) {
+    display: none;
+}
+

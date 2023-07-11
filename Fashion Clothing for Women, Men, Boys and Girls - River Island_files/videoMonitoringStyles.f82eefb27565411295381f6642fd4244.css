@@ -1,0 +1,33 @@
+/*Video LP Styles with flash animation works with: 2020 - videoMonitoring.js and 2020 - videoMonitoringMultiple.js*/
+.video-container {width: 100%;}
+
+.video-container video {width: 100%;}
+
+.tap-container {
+  position: absolute;
+  text-align: center;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  z-index: 5;
+}
+
+.tap-container p {
+  font-size: 2em;
+  margin: 0;
+  font-weight: 700;
+  color: white;
+}
+
+.tap-container p span {
+  animation: flash 1s linear infinite;
+}
+
+@keyframes flash {
+  0% {opacity: 1;}
+  49% {opacity: 1;}
+  50% {opacity: 0;}
+  60% {opacity: 0;}
+  61% {opacity: 1;}
+  100% {opacity: 1;}
+}

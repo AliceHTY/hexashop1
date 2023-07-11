@@ -1,0 +1,14 @@
+document.addEventListener("DOMContentLoaded", function(event) {
+    
+  var heroVideo = document.getElementsByClassName('hero-video')[0];
+    
+  if (window.innerWidth > 768){
+    heroVideo = document.getElementsByClassName('desktop-video')[0]; 
+  }
+  
+
+  heroVideo.getElementsByTagName("source")[0].src = heroVideo.getElementsByTagName("source")[0].dataset.src;
+  heroVideo.load();
+  heroVideo.play();
+  console.log('somefwfa')
+});

@@ -1,0 +1,62 @@
+var $animation_elements = $('.animation-element');
+var $animation_elements2 = $('.animation-element2');
+var $window = $(window);
+
+function check_if_in_view() {
+  var window_height = $window.height();
+  var window_top_position = $window.scrollTop();
+  var window_bottom_position = (window_top_position + window_height);
+
+
+//if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+ if(window.innerWidth <= 701){
+  $.each($animation_elements, function() {
+    var $element = $(this);
+    var element_height = $element.outerHeight();
+    var element_top_position = $element.offset().top;
+    var element_bottom_position = (element_top_position + element_height);
+
+
+    //check to see if this current container is within viewport
+    if ((element_bottom_position >= window_top_position) &&
+      (element_top_position <= window_bottom_position)) {
+      $element.addClass('in-view-mob');
+    }
+  });
+  
+}
+else{
+    $.each($animation_elements, function() {
+    var $element = $(this);
+    var element_height = $element.outerHeight();
+    var element_top_position = $element.offset().top;
+    var element_bottom_position = (element_top_position + element_height);
+      var element_padding = $element.css("padding-bottom");
+    var new_padding = element_padding * 1.5;
+    // console.log(new_padding);
+    //check to see if this current container is within viewport
+    if ((element_bottom_position >= window_top_position) &&
+      (element_top_position <= window_bottom_position)) {
+      $element.addClass('in-view');
+    }
+  });
+
+  $.each($animation_elements2, function() {
+    var $element = $(this);
+    var element_height = $element.outerHeight();
+    var element_top_position = $element.offset().top;
+    var element_bottom_position = (element_top_position + element_height);
+      var element_padding = $element.css("padding-bottom");
+    var new_padding = element_padding * 1.5;
+    if ((element_bottom_position >= window_top_position) &&
+      (element_top_position <= window_bottom_position)) {
+      $element.addClass('in-view2');
+    }
+  });
+}
+
+}
+
+
+$window.on('scroll resize', check_if_in_view);
+$window.trigger('scroll');

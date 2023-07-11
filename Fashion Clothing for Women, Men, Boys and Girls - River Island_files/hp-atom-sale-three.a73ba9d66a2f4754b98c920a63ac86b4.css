@@ -1,0 +1,92 @@
+
+/*SALE HACK*/
+
+.landing-page__hero.landing-page__hero--placement {
+    padding-bottom: 54.5%;
+  }
+  .landing-page__hero--placement .landing-page__hero-content {
+    bottom: 16%;
+    width: 75%;
+    transform: translate(-50%, 0);
+    left: 50%;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    z-index: 2;
+  }
+  .landing-page__hero--placement .landing-page__hero-cta {
+    justify-content: center;
+    flex-basis: 43%;
+    max-width: 43%;
+    padding: 9px 0;
+    margin-bottom: 5%;
+    color: #000000;
+    background-color: #ffffff;
+  }
+  .landing-page__hero--placement .landing-page__hero-cta:nth-child(3),
+  .landing-page__hero--placement .landing-page__hero-cta:nth-child(4) {
+    margin-bottom: 0;
+  }
+  
+  
+  
+  @media screen and (min-width: 769px) {
+    .landing-page__hero.landing-page__hero--placement {
+      padding-bottom: 41.5%;
+    }
+    .landing-page__hero--placement .landing-page__hero-content {
+      top: 81%;
+      width: 100%;
+      max-width: 750px;
+    }
+    .landing-page__hero--placement .landing-page__hero-cta {
+      flex-basis: 20%;
+      max-width: 20%;
+      margin-bottom: 0;
+    }
+    .fast-track__cta {
+      padding: 9px 5px;
+    }
+  }
+  .landing-page__hero--placement .landing-page__hero-content-title {display:none}
+  
+  
+  /* this hides the ctas */
+  /* .landing-page__hero--placement .landing-page__hero-content {
+      display: none;
+  } */
+  .landing-page__hero--placement .landing-page__hero-content-title {display:none}
+  .landing-page__hero--placement .landing-page__hero-cta--secondary{display:none}
+  .landing-page__hero--placement .logo__mobile,
+  .landing-page__hero--placement .logo__desktop,
+  .landing-page__hero--placement .logo__overlay,
+  .landing-page__hero--placement .hero-logo,
+  .landing-page__hero--placement .denim-logo {
+       display: none;
+  }
+  .hero-logo {
+      display: none;
+  }
+  @media screen and (max-width: 769px) {
+      /* .landing-page__hero--placement .landing-page__hero-content {
+          display: none;
+      }  */
+      .landing-page__hero--placement .landing-page__hero-content {
+        top: 58%;
+      }
+  }
+  .fast-track--placement-3 .fast-track__cta:nth-child(1){margin-left: 0% } 
+  .fast-track__wrapper .fast-track--placement-3 .fast-track__cta:nth-child(2){margin-left: 0%}
+  
+  
+  .fast-track--placement-2 .fast-track__cta:nth-child(1) {
+      margin-left: 0%;
+  }
+  .fast-track--placement-2 .fast-track__cta:nth-child(2) {
+      margin-left: 22%;
+  }
+  
+  .landing-page__hero--placement .denim-logo {
+    display: none;
+  }
+  

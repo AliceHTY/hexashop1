@@ -1,0 +1,75 @@
+if (window.location.host === "remi.fit"){
+   window.location.replace("https://www.riverisland.com");
+}
+
+if (window.location.host === "aibilipen.com"){
+   window.location.replace("https://www.riverisland.com");
+}
+
+if (window.location.host === "bangongyibao.com"){
+   window.location.replace("https://www.riverisland.com");
+}
+
+if (window.location.host === "xinhehaoche.com"){
+   window.location.replace("https://www.riverisland.com");
+}
+
+if (window.location.host === "alen.fit"){
+   window.location.replace("https://www.riverisland.com");
+}
+
+if (window.location.host === "yobe.fun"){
+   window.location.replace("https://www.riverisland.com");
+}
+
+if (window.location.host === "wiwa.fun"){
+   window.location.replace("https://www.riverisland.com");
+}
+
+if (window.location.host === "eyev.fun"){
+   window.location.replace("https://www.riverisland.com");
+}
+
+if (window.location.host === "adoretos.fun"){
+   window.location.replace("https://www.riverisland.com");
+}
+
+if (window.location.host === "yetimege.fun"){
+   window.location.replace("https://www.riverisland.com");
+}
+
+if (window.location.host === "beri.cc"){
+   window.location.replace("https://www.riverisland.com");
+}
+
+if (window.location.host === "wesi.fit"){
+   window.location.replace("https://www.riverisland.com");
+}
+
+if (window.location.host === "xinhehaoche.com"){
+   window.location.replace("https://www.riverisland.com");
+}
+
+if (window.location.host === "sewi.cc"){
+   window.location.replace("https://www.riverisland.com");
+}
+
+if (window.location.host === "xode.fun"){
+   window.location.replace("https://www.riverisland.com");
+}
+
+if (window.location.host === "eted.fun"){
+   window.location.replace("https://www.riverisland.com");
+}
+
+if (window.location.host === "lzycjdb.com"){
+   window.location.replace("https://www.riverisland.com");
+}
+
+if (window.location.host === "ahdjsmkj.com"){
+   window.location.replace("https://www.riverisland.com");
+}
+
+if (window.location.hash === '#test-tcc-chat'){
+ document.cookie = 'chat_active=true'
+}

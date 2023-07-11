@@ -1,0 +1,118 @@
+var terms = false;
+
+function getPromo(){
+	var dids = tcpl.getDids();
+	if (!!dids) {
+	    //Pull promo and place it into info-strip on desktop and mobile
+	    tcpl.populateBanner(".region-UK .info-strip .promo-links .first, .region-UK .mobile-info-strip .promo-links .first, .region-IE .info-strip .promo-links .first, .region-IE .mobile-info-strip .promo-links .first", "info-strip-1", dids[0].contentType, dids[0].id );
+	    
+	    //Add personalisation-active class to body
+		document.body.classList.add("personalisation-active");
+	    
+	    if (!terms) {
+	    	//Pull t&cs into modal
+		    tcpl.getTermsAndConditions(dids[0].id, {
+		        onSuccess : function(data){
+		            var node = document.createElement("div");
+		            node.innerHTML = data;
+		            document.getElementById("terms-content").appendChild(node);
+		        },
+		        onError : function(){
+		            //console.log("Promotion T&Cs could not be found!");
+		        }
+		    });
+		    
+		    //Modal control
+		    //Get the info strip
+		    var infostrip = document.getElementsByClassName("info-strip")[0];
+		    var mobileInfoStrip = document.getElementsByClassName("mobile-info-strip")[0];
+		    
+		    //Get the modal
+		    var modal = document.getElementById("myPersonalisationModal");
+		    
+		    //Add Id to info strip on desktop and mobile
+			document.getElementsByClassName("first personalisation-find")[0].setAttribute("id", "info-strip-click");
+			if (mobileInfoStrip){
+			    document.getElementsByClassName("first gesture-zone")[0].setAttribute("id", "mobile-info-strip-click");
+			}
+			
+		    //Get the desktop/mobile info strip that opens the modal
+			var btn = document.getElementById("info-strip-click");
+			var btnMob = document.getElementById("mobile-info-strip-click");
+
+		    //Get the button/x element that closes the modal
+		    var div = document.getElementsByClassName("personalisation-close-btn")[0];
+		    var span = document.getElementsByClassName("ps-close")[0];
+		    
+		    //When the user clicks the desktop/mobile info strip, open the modal 
+		    btn.onclick = function() {
+		        modal.style.display = "block";
+				infostrip.classList.add('personalisation-modal-active');
+			}
+			
+	        if (btnMob){
+    			btnMob.onclick = function() {
+    				modal.style.display = "block";
+    				infostrip.classList.add('personalisation-modal-active');
+    		    }
+	        }
+
+		    
+		    //When the user clicks the button/x, close the modal
+		    div.onclick = function() {
+		        modal.style.display = "none";
+				infostrip.classList.remove('personalisation-modal-active');
+		    }
+		    
+		    span.onclick = function() {
+		        modal.style.display = "none";
+				infostrip.classList.remove('personalisation-modal-active');
+		    }
+		    
+		    //When the user clicks anywhere outside of the modal, close it
+		    window.onclick = function(event) {
+		        if (event.target == modal) {
+		            modal.style.display = "none";
+					infostrip.classList.remove('personalisation-modal-active');
+		        }
+		    }
+
+		    terms = true;
+	    }
+	} else {
+	    //console.log("No personalisation promotion found!");
+	}
+}
+
+getPromo();
+
+function getPromoAgain(){
+	setTimeout(function(){
+		getPromo();
+	}, 1500)
+}
+
+//Re pull promo on add to bag from PDP
+var addtobagPDP = document.getElementsByClassName("ui-btn-transactional")[0];
+if (addtobagPDP) {
+	//console.log("Found PDP add to bag button!");
+	addtobagPDP.onclick = getPromoAgain;
+} else {
+	//console.log("NOT found PDP add to bag button!");
+}
+
+//Re pull promo on add to bag from PLP quick view
+var quickviewPLP = document.getElementsByClassName("quick-buy-link");
+for (var i = 0; i < quickviewPLP.length; i++) {
+	quickviewPLP[i].onclick = function() {
+		setTimeout(function () {
+		    var addtobagPLP = document.getElementsByClassName("ui-btn-transactional")[0];
+		    if (addtobagPLP) {
+		    	//console.log("Found PLP add to bag button!");
+		    	addtobagPLP.onclick = getPromoAgain;
+		    } else {
+		    	//console.log("NOT found PLP add to bag button!");
+		    }
+	    }, 1500);
+	}
+}

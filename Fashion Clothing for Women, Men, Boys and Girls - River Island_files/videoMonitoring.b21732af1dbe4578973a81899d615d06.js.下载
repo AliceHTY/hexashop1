@@ -1,0 +1,72 @@
+(function() {
+  var mobVideo = document.getElementById("mobVideo");
+  var deskVideo = document.getElementById("deskVideo");
+  var playMob = document.getElementById("tapToPlay");
+  var videoContainerDesktop = document.querySelectorAll(
+    ".desktop-section .video-container"
+  );
+
+  if (window.innerWidth > 701) {
+    window.addEventListener("load", function() {
+      if (/Edge/.test(navigator.userAgent)) {
+        tapToPlayDesktop();
+      } else if (
+        navigator.userAgent.indexOf("MSIE") !== -1 ||
+        navigator.appVersion.indexOf("Trident/") > -1
+      ) {
+        tapToPlayDesktop();
+      }
+    });
+  }
+  
+  function tapToPlayDesktop() {
+    var par = document.createElement("p");
+    par.innerHTML = "Tap to play";
+    par.style.cssText =
+      "position: absolute; left: 50%; bottom: 30%; transform: translateX(-50%); color: white; font-weight: 500; font-size: 2em; pointer-events: none;";
+    videoContainerDesktop.appendChild(par);
+    deskVideo.addEventListener("click", function() {
+      par.style.display = "none";
+    });
+  }
+  
+    // videoContainerDesktop.forEach(function(video){
+    //     var div = document.createElement('div');
+    //     div.className = 'tap-container'
+    //     var p = document.createElement('p');
+    //     p.innerHTML = `Click to play <span>/</span>`
+    //     p.style.cssText = "position: absolute; left: 50%; bottom: 30%; transform: translateX(-50%); color: white; font-weight: 500; font-size: 2em; pointer-events: none; z-index: 6;";
+    //     div.appendChild(p)
+    //     video.appendChild(div)
+        
+    //     deskVideo.addEventListener("click", function() {
+    //       p.style.display = "none";
+    //     });
+    // })
+  
+
+
+
+  if (mobVideo) {
+    mobVideo.addEventListener("click", function() {
+      if (playMob) {
+        playMob.style.display = "none";
+      }
+      if (mobVideo.paused) {
+        mobVideo.play();
+      } else {
+        mobVideo.pause();
+      }
+    });
+  }
+  if (deskVideo) {
+    deskVideo.addEventListener("click", function() {
+        
+      if (deskVideo.paused) {
+        deskVideo.play();
+      } else {
+        deskVideo.pause();
+      }
+    });
+  }
+})();
